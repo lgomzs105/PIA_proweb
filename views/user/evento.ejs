@@ -14,34 +14,33 @@
     <div class="container py-5">
         <a href="/calendario" class="btn btn-outline-success mb-4">← Volver al calendario</a>
 
-        <h1 class="mb-3 text-success fw-bold">
-            <%= evento.titulo %>
-        </h1>
+        <main class="container text-white py-5">
+            <h1>
+                <%= evento.titulo %>
+            </h1>
+            <img src="<%= evento.portada %>" class="img-fluid mb-4" />
 
-        <img src="<%= evento.portada %>" alt="Portada" class="img-fluid rounded mb-4" />
+            <ul class="list-unstyled">
+                <li><strong>📍 Lugar:</strong>
+                    <%= evento.lugar %>
+                </li>
+                <li><strong>📅 Duración:</strong>
+                    <%= evento.duracion %>
+                </li>
+                <li><strong>🕒 Horario:</strong>
+                    <%= evento.horario %>
+                </li>
+            </ul>
 
-        <ul class="list-group list-group-flush mb-4">
-            <li class="list-group-item bg-dark text-white">📅 <strong>Fecha:</strong>
-                <%= evento.fecha %>
-            </li>
-            <li class="list-group-item bg-dark text-white">📍 <strong>Lugar:</strong>
-                <%= evento.lugar %>
-            </li>
-            <li class="list-group-item bg-dark text-white">🕒 <strong>Horario:</strong>
-                <%= evento.horario %>
-            </li>
-            <li class="list-group-item bg-dark text-white">📆 <strong>Duración:</strong>
-                <%= evento.duracion %>
-            </li>
-        </ul>
+            <div class="mt-4">
+                <% evento.descripcion.forEach(p=> { %>
+                    <p>
+                        <%= p %>
+                    </p>
+                    <% }) %>
+            </div>
+        </main>
 
-        <div>
-            <% evento.descripcion.forEach(p=> { %>
-                <p>
-                    <%= p %>
-                </p>
-                <% }) %>
-        </div>
     </div>
 
 </body>
