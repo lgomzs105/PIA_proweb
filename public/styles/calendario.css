@@ -1,0 +1,23 @@
+body {
+    background-color: #121212;
+    color: #fff;
+}
+
+h1 {
+    border-bottom: 2px solid #198754;
+    padding-bottom: 0.5rem;
+}
+
+table.table td,
+table.table th {
+    vertical-align: middle;
+}
+
+a.btn {
+    transition: all 0.2s ease;
+}
+
+a.btn:hover {
+    background-color: #198754;
+    color: #fff;
+}

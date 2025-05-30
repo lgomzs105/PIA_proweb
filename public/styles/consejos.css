@@ -1,0 +1,30 @@
+        .advice-section {
+            background-color: #1f2937;
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .advice-section img {
+            max-width: 100%;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        .advice-video {
+            aspect-ratio: 16/9;
+            width: 100%;
+            border: none;
+            border-radius: 6px;
+            margin-top: 1rem;
+        }
+
+        .img-motivacion {
+            width: 300px;
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 1rem auto;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }

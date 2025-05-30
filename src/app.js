@@ -3,6 +3,11 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 
 import dashboardRoute from './routes/dashboard.routes.js'
+import consejosRoutes from './routes/consejos.routes.js'
+import aboutRoutes from './routes/about.routes.js'
+import calendarRoutes from './routes/calendario.routes.js'
+
+
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -25,6 +30,9 @@ app.set('view engine', 'ejs');
 
 // Rutas
 app.use(dashboardRoute)
+app.use(consejosRoutes)
+app.use(aboutRoutes)
+app.use(calendarRoutes)
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}/`)
