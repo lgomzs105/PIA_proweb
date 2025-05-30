@@ -18,61 +18,36 @@
       <!-- Main Content -->
       <main class="flex-fill p-4">
         <h1 class="mb-4 text-success fw-bold">🗓️ Calendario de eventos</h1>
-
         <p class="lead">Aquí puedes consultar los eventos más importantes programados en FIME.</p>
-        <p class="text-info">Haz clic en cada evento para ver su información detallada.</p>
 
         <div class="table-responsive mt-4">
           <table class="table table-dark table-hover align-middle">
             <thead class="table-success">
               <tr>
-                <th scope="col">Evento</th>
-                <th scope="col">Fecha</th>
-                <th scope="col">Acción</th>
+                <th>Evento</th>
+                <th>Fecha</th>
+                <th>Acción</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <td>🧠 Masterclass Estrategias de Precios</td>
-                <td>30 de mayo, 2025</td>
-                <td><a href="/html/masterclass-precios.html" class="btn btn-outline-light btn-sm" target="_blank">Ver
-                    más</a></td>
-              </tr>
-              <tr>
-                <td>🎓 Diseño de CAD</td>
-                <td>31 de mayo, 2025</td>
-                <td><a href="/html/diseno-cad.html" class="btn btn-outline-light btn-sm" target="_blank">Ver más</a>
-                </td>
-              </tr>
-              <tr>
-                <td>🧬 Subasta de bovinos y material genético</td>
-                <td>31 de mayo, 2025</td>
-                <td><a href="/html/subasta.html" class="btn btn-outline-light btn-sm" target="_blank">Ver más</a></td>
-              </tr>
-              <tr>
-                <td>📊 Microsoft Power BI</td>
-                <td>31 de mayo, 2025</td>
-                <td><a href="/html/powerbi.html" class="btn btn-outline-light btn-sm" target="_blank">Ver más</a></td>
-              </tr>
-              <tr>
-                <td>💻 Diseño web con PHP</td>
-                <td>31 de mayo, 2025</td>
-                <td><a href="/html/php-web.html" class="btn btn-outline-light btn-sm" target="_blank">Ver más</a></td>
-              </tr>
-              <tr>
-                <td>🐍 Programa Phyton</td>
-                <td>31 de mayo, 2025</td>
-                <td><a href="/html/phyton.html" class="btn btn-outline-light btn-sm" target="_blank">Ver más</a></td>
-              </tr>
-              <tr>
-                <td>📝 Periodo de exámenes ordinarios</td>
-                <td>26–30 de mayo, 2025</td>
-                <td><a href="/html/examenes-ordinarios.html" class="btn btn-outline-light btn-sm" target="_blank">Ver
-                    más</a></td>
-              </tr>
+              <% eventos.forEach(evento=> { %>
+                <tr>
+                  <td>
+                    <%= evento.emoji %>
+                      <%= evento.titulo %>
+                  </td>
+                  <td>
+                    <%= evento.fecha %>
+                  </td>
+                  <td>
+                    <a href="<%= evento.ruta %>" class="btn btn-outline-light btn-sm" target="_blank">Ver más</a>
+                  </td>
+                </tr>
+                <% }) %>
             </tbody>
           </table>
         </div>
+
       </main>
   </div>
 
