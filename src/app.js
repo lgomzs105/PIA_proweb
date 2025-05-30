@@ -6,6 +6,7 @@ import dashboardRoute from './routes/dashboard.routes.js'
 import consejosRoutes from './routes/consejos.routes.js'
 import aboutRoutes from './routes/about.routes.js'
 import calendarRoutes from './routes/calendario.routes.js'
+import noticiasRoutes from './routes/noticias.routes.js'
 
 
 
@@ -34,6 +35,7 @@ app.use(dashboardRoute)
 app.use(consejosRoutes)
 app.use(aboutRoutes)
 app.use(calendarRoutes)
+app.use(noticiasRoutes)
 
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}/`)
