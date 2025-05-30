@@ -9,18 +9,25 @@ const router = Router()
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-// Ruta: /calendario
-router.get('/calendario', async (req, res) => {
-  try {
-    const pathToJSON = join(__dirname, '../../data/eventos.json')
-    const raw = await readFile(pathToJSON, 'utf-8')
-    const eventos = JSON.parse(raw)
+const getEventos = async () => {
+  const raw = await readFile(join(__dirname, '../../data/eventos.json'), 'utf-8')
+  return JSON.parse(raw)
+}
 
-    res.render('user/calendario', { eventos }) // Asegúrate de tener esta vista
-  } catch (err) {
-    console.error('❌ Error cargando eventos:', err)
-    res.status(500).send('Error interno al cargar el calendario')
-  }
+// Página principal de calendario
+router.get('/calendario', async (req, res) => {
+  const eventos = await getEventos()
+  res.render('user/calendario', { eventos })
+})
+
+// Página individual por slug
+router.get('/calendario/:slug', async (req, res) => {
+  const eventos = await getEventos()
+  const evento = eventos.find(e => e.slug === req.params.slug)
+
+  if (!evento) return res.status(404).render('errors/404')
+
+  res.render('user/evento', { evento })
 })
 
 export default router
